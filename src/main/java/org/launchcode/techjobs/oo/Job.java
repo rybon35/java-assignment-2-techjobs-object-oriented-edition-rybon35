@@ -62,6 +62,35 @@ public Job(String name, Employer employer, Location location,  PositionType posi
         return id;
     }
 
+    public String toString() {
+    String job = "";
+
+    if (name.equals("")) {
+            name = "Data not available";
+        }
+    if (employer.getValue().equals("") || employer.getValue() == null) {
+       employer.setValue("Data not available");
+    }
+    if (location.getValue().equals("") || location.getValue() == null) {
+            location.setValue("Data not available");
+        }
+    if (positionType.getValue().equals("") || positionType.getValue() == null) {
+            positionType.setValue("Data not available");
+        }
+    if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
+            coreCompetency.setValue("Data not available");
+        }
+
+
+    job = "\nID: " + id + "\nName: " + this.name + "\nEmployer: " + employer.getValue() + "\nLocation: " + location.getValue() +
+            "\nPosition Type: " + positionType.getValue() + "\nCore Competency: " + coreCompetency.getValue() + "\n";
+
+    return job;
+
+    }
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
